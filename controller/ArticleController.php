@@ -22,7 +22,7 @@ class ArticleController
         if (isset($_GET['id']) && $_GET['id'] > 0) {
             $article = ArticleDAO::readArticleById($_GET['id']);
             $categorieList = CategoryDAO::getCategorieList();
-            $commentaireList = CommentDAO::getListCommentByArticle($_GET['id']);
+            $commentList = CommentDAO::getListCommentByArticle($_GET['id']);
 
             require 'view/articleItemView.php';
         }

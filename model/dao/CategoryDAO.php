@@ -21,7 +21,7 @@ class CategoryDAO
 
     //get List categorie
     static function getCategorieList(){
-        $query = DB::getDB()->query('SELECT * FROM categories ORDER BY length(libelle)');
+        $query = DB::getDB()->query('SELECT * FROM categories ORDER BY id');
 
         return $query;
     }

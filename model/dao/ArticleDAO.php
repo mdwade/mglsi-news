@@ -34,7 +34,7 @@ class ArticleDAO
         while ($data = $query->fetch(PDO::FETCH_ASSOC)){
             $articles[] = $data;
         }
-        return $articles;
+        return json_encode($articles);
     }
 
     //get article by id
@@ -42,7 +42,7 @@ class ArticleDAO
         $article = DB::getDB()->query('SELECT * FROM articles where id ='.$id);
         $item = $article->fetch();
         $article->closeCursor();
-        return $item;
+        return json_encode($item);
     }
 
     //get article by categorie
