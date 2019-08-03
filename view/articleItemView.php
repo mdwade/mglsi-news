@@ -38,18 +38,18 @@
     <div class="w3-row-padding w3-padding-16" id="">
         <div id="contenu">
             <?php
-            if($_GET['action'] == 'article')
-            {?>
+if ($_GET['action'] == 'article') {
+	?>
                 <div class="w3-row-padding">
                     <div class="w3-col m6">
-                        <img src="<?= "view/assets/newsPhoto/".$article['photo'] ?>" style="width: 500px">
+                        <img src="<?="view/assets/newsPhoto/" . $article['photo']?>" style="width: 500px">
                     </div>
                     <div class="w3-col m6">
-                        <h2><?= $article['title'] ?></h2>
-                        <p><?= $article['content'] ?></p>
+                        <h2><?=$article['title']?></h2>
+                        <p><?=$article['content']?></p>
                         <i class="fa fa-comment-o" aria-hidden="true"></i>
-                        <i>Publié le <?= $article['postedDate'] ?> par</i>
-                        <i class="w3-text-blue"><?= $article['pseudoAuthor'] ?></i>
+                        <i>Publié le <?=$article['postedDate']?> par</i>
+                        <i class="w3-text-blue"><?=$article['pseudoAuthor']?></i>
                     </div>
                 </div>
 
@@ -60,32 +60,28 @@
                 <h2>Commentaires</h2>
                 <?php
 /*                for ($i=0; $i<sizeof($comments); $i++){
-                    echo '<h3><img src="views/assets/img/noImage.jpg" style="width: 30px"> '
-                        .$comments[$i]['pseudo_auteur'].'</h3>'.
-                        '<span style="margin-left: px">'.$comments[$i]['comment'].'</span>'.
-                        '<hr>';
-                }*/?>
+	echo '<h3><img src="views/assets/img/noImage.jpg" style="width: 30px"> '
+	.$comments[$i]['pseudo_auteur'].'</h3>'.
+	'<span style="margin-left: px">'.$comments[$i]['comment'].'</span>'.
+	'<hr>';
+	}*/?>
 
                 </div>--><?php
 
-            }
-
-            elseif ($_GET['action'] == 'categorie')
-            {
-                if(!empty($article)){
-                    foreach ($article as $article){?>
+} elseif ($_GET['action'] == 'categorie') {
+	if (!empty($article)) {
+		foreach ($article as $article) {?>
                         <div class="article">
-                        <h1><a href="index.php?action=post&id=<?= $article['id'] ?>"><?= $article['titre'] ?></a></h1>
-                        <p><?= substr($article['contenu'], 0, 300) . '...' ?></p>
+                        <h1><a href="index.php?action=post&id=<?=$article['id']?>"><?=$article['titre']?></a></h1>
+                        <p><?=substr($article['contenu'], 0, 300) . '...'?></p>
                         </div><?php
-                    }
-                }
-                else{?>
+}
+	} else {?>
                     <h3>Aucun article dans cette catégorie !</h3>
                     <meta http-equiv="refresh" content="3; url=index.php"><?php
-                }
-            }
-            ?>
+}
+}
+?>
             <div>
                 <h1> </h1>
             </div>
@@ -130,6 +126,7 @@
     </footer>
 
     <!-- End page content -->
+
 </div>
 </body>
 </html>

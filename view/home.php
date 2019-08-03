@@ -1,12 +1,11 @@
-<!DOCTYPE html>
 <html>
 <title>MGLSI News | Accueil</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="view/assets/css/w3.css">
+<link rel="stylesheet" href="public/assets/css/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="shortcut icon" href="view/assets/newsPhoto/journalism.png" type="image/x-icon">
+<link rel="shortcut icon" href="public/assets/newsPhoto/journalism.png" type="image/x-icon">
 <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     .w3-bar-block .w3-bar-item {padding:20px}
@@ -27,7 +26,7 @@
 <!-- Top menu -->
 <div class="w3-top">
     <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-        <?php require_once 'view/assets/utils/menu.php'?>
+        <?php require_once 'utils/menu.php'?>
     </div>
 </div>
 <br>
@@ -37,26 +36,26 @@
     <!-- First Photo Grid-->
     <div class="w3-row-padding w3-padding-16 w3-center" id="food">
         <?php
-        foreach ($listAritcle as $article){?>
+foreach ($listAritcle as $article) {?>
             <div class="w3-col m3">
-                <img src="<?= "view/assets/newsPhoto/".$article['photo'] ?>"  style="width: 270px; height:350px; border-radius: 5px">
-                <h4><b><a href="<?= 'index.php?action=article&id='.$article['id'] ?>"><?= $article['title'] ?></a></b></h4>
-                <p><?= substr($article['content'], 0, 35) . '...' ?></p>
+                <img src="/public/assets/newsPhoto/<?=$article['photo']?>"  style="width: 270px; height:350px; border-radius: 5px">
+                <h4><b><a href="<?='index.php?action=article&id=' . $article['id']?>"><?=$article['title']?></a></b></h4>
+                <p><?=substr($article['content'], 0, 35) . '...'?></p>
                 <div class="w3-row-padding" style="opacity: 0.5">
                     <div class="w3-col m5">
                         <i class="fa fa-clock-o"></i>
-                        <i><?= $article['postedDate']?></i>
+                        <i><?=$article['postedDate']?></i>
                     </div>
 
                     <div class="w3-col m7">
                         <i class="fa fa-comment-o"></i>
-                        <i>Par <?= $article['pseudoAuthor']?></i>
+                        <i>Par <?=$article['pseudoAuthor']?></i>
                     </div>
                 </div>
             </div>
             <?php
-        }
-        ?>
+}
+?>
     </div>
 
     <!-- Pagination -->
@@ -107,9 +106,19 @@
             </p>
         </div>
     </footer>
-
+  <!--   <script >
+        $(()=>{
+            alert("ok")
+        })
+    </script> -->
     <!-- End page content -->
 </div>
+<script type="text/javascript" src="public/assets/js/jquery.min.js"></script>
+     <script type="text/javascript" >
+        $(() => {
+            alert("ok")
+        })
+     </script>
 </body>
 </html>
 
