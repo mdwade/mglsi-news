@@ -52,7 +52,7 @@ class ArticleDAO
         while ($data = $query->fetch(PDO::FETCH_ASSOC)){
             $items[] = $data;
         }
-        return $items;
+        return json_encode($items);
     }
 
     //delete an article

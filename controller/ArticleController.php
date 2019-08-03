@@ -39,7 +39,7 @@ class ArticleController
             $article = ArticleDAO::readArticlesByCategorie($_GET['id']);
             $comments = CommentDAO::getListCommentByArticle($_GET['id']);
             $categorieList = CategoryDAO::getCategorieList();
-var_dump($comments);
+
             require 'view/articleItemView.php';
         }
         else {

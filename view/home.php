@@ -13,6 +13,9 @@
     a{
         text-decoration: none;
     }
+    .barDefilement a:hover{
+        background-color: #1e2332 !important;
+    }
 </style>
 <body>
 
@@ -54,21 +57,16 @@
 
     <!-- Pagination -->
     <div class="w3-center w3-padding-32">
-        <div class="w3-bar">
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-            <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-            <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+        <div class="w3-bar barDefilement">
+            <a href="#" class="w3-bar-item w3-button w3-hover-black w3-round">« Précédent</a>
+            <a href="#" class="w3-bar-item w3-button w3-hover-black w3-round">Suivant »</a>
         </div>
     </div>
 
-    <hr>
-    <?php require_once 'view/assets/utils/footer.php'?>
-
     <!-- End page content -->
 </div>
+<?php require_once 'view/assets/utils/footer.php'?>
+
 </body>
 </html>
 

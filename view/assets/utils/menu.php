@@ -1,7 +1,7 @@
 <div class="w3-row">
     <div class="w3-col m3 w3-padding-16 w3-center" >
         <a href="index.php">
-            <img src="view/assets/newsPhoto/journalism.png" style="width: 30px"> MGLSI News</a>
+            <img src="view/assets/newsPhoto/journalism.png" style="width: 30px"> <span style="color: #14224a">MGLSI News</span></a>
     </div>
     <div class="w3-col m9 menu">
         <ul>
