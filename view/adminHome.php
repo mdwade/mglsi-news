@@ -283,11 +283,45 @@
                 <h3>Modifier un article</h3>
             </header>
 
+            <div>
+                <form action="" class="w3-form">
+                    <div class="w3-row-padding w3-padding">
+                        <div class="w3-half">
+                            <label class="w3-margin-bottom">Titre</label>
+                            <br>
+                            <input class="w3-input w3-border" type="title" placeholder="Titre de l'article">
+                        </div>
+                        <div class="w3-half">
+                            <label class="w3-margin-bottom">Catégorie</label>
+                            <br>
+                            <select class="w3-select w3-border" name="idCategorie">
+                                <option value="" disabled selected>Choisir une catégorie</option>
+                                <option value="1">Sport</option>
+                                <option value="4">A la une</option>
+                                <option value="6">Développement durable</option>
+                                <option value="8">Education</option>
+                                <option value="9">Mode</option>
+                            </select>
+                        </div>
+                    </div>
 
-
-            <div class="w3-container w3-light-grey w3-padding">
-                <button class="w3-button w3-right w3-white w3-border w3-round-large"
-                        onclick="document.getElementById('modalupdateArticle').style.display='none'">Fermer</button>
+                    <div class="w3-row-padding w3-padding">
+                        <div class="w3-half">
+                            <label class="w3-margin-bottom">Desciption</label>
+                            <br>
+                            <textarea name="content" id="" cols="50" rows="5" class="w3-input w3-border" placeholder="Description de l'article"></textarea>
+                        </div>
+                        <div class="w3-half">
+                            <label class="w3-margin-bottom">Photo</label>
+                            <br>
+                            <input type="file" class="" name="photo">
+                        </div>
+                    </div>
+                    <div class="w3-container w3-padding w3-center w3-margin">
+                        <button class="w3-button w3-green w3-border w3-round-large"
+                                onclick="document.getElementById('modalAddArticle').style.display='none'">Valider</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
