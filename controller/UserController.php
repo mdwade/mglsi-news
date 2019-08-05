@@ -6,7 +6,7 @@ class UserController
     static function admin(){
         $categorieList = CategoryDAO::getCategorieList();
 
-        require 'view/adminHome.php';
+        require 'view/loginView.php';
     }
     static function login($request){
 
