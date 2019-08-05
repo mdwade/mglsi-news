@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bd3a99f-6d4c-4979-b1ba-da2c30a38ea2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/adminHome.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/adminHome.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +26,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/adminHome.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="301">
@@ -50,7 +48,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -109,8 +107,8 @@
         <option value="$PROJECT_DIR$/view/loginView.php" />
         <option value="$PROJECT_DIR$/controller/AppController.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/controller/UserController.php" />
         <option value="$PROJECT_DIR$/view/adminHome.php" />
+        <option value="$PROJECT_DIR$/controller/UserController.php" />
       </list>
     </option>
   </component>
@@ -230,12 +228,12 @@
       <workItem from="1564845326094" duration="6060000" />
       <workItem from="1564902705537" duration="621000" />
       <workItem from="1564935638983" duration="3023000" />
-      <workItem from="1565017279418" duration="17324000" />
+      <workItem from="1565017279418" duration="17362000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67943000" />
+    <option name="totallyTimeSpent" value="67981000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -477,24 +475,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/AppController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="47" column="26" lean-forward="true" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -515,6 +499,20 @@
             <element signature="e#4030#4037#1#HTML" expanded="true" />
             <element signature="e#6972#6979#1#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="31" />
         </state>
       </provider>
     </entry>
