@@ -44,7 +44,11 @@ class AppController
         //TODO
     }
 
-    function login($request){
+    function login(){
+        UserController::admin();
+    }
+
+    function toLog($request){
         //TODO
     }
 

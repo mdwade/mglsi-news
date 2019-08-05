@@ -3,6 +3,8 @@
 define('WEBROOT',str_replace('index.php','',$_SERVER['SCRIPT_NAME']));
 define('ROOT',str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']));
 
+$url = explode('/', $_SERVER['REQUEST_URI']);
+
 include_once (ROOT.'controller/AppController.php');
 
 if(isset($_GET['action']))
@@ -25,6 +27,8 @@ if(isset($_GET['action']))
             break;
 
         case 'login':
+            $appController = new AppController();
+            $appController->login();
             break;
 
         default:
@@ -32,6 +36,10 @@ if(isset($_GET['action']))
             $appController->getlistArticle();
             break;
     }
+}
+elseif ($url[2] == 'login'){
+    $appController = new AppController();
+    $appController->login();
 }
 else
 {
