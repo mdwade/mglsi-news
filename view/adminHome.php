@@ -131,7 +131,11 @@
                                         <img src="view/assets/newsPhoto/refresh.png" style="width: 15px">
                                     </a>
 
-                                    <a href="#" class="w3-button w3-red w3-round w3-tiny" onclick="document.getElementById('modalupdateArticle').style.display='block'">
+                                    <a href="#" class="w3-button w3-green w3-round w3-tiny">
+                                        <img src="view/assets/newsPhoto/blogging.png" style="width: 15px">
+                                    </a>
+
+                                    <a href="#" class="w3-button w3-red w3-round w3-tiny">
                                         <img src="view/assets/newsPhoto/delete.png" style="width: 15px">
                                     </a>
                                 </td>
