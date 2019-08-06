@@ -3,7 +3,7 @@
 <title>MGLSI News | Accueil</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="view/assets/css/w3.css">
+<link rel="stylesheet" href="public/css/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="shortcut icon" href="view/assets/newsPhoto/journalism.png" type="image/x-icon">
@@ -44,7 +44,7 @@ if ($_GET['action'] == 'article') {
                 <?php $article = json_decode($article);?>
                 <div class="w3-row-padding">
                     <div class="w3-col m6">
-                        <img src="<?="view/assets/newsPhoto/" . $article->photo?>" style="width: 500px; border-radius: 5px">
+                        <img src="view/assets/newsPhoto/article.png" style="width: 500px; border-radius: 5px">
                     </div>
                     <div class="w3-col m6">
                         <h2><?=$article->title?></h2>

@@ -1,7 +1,8 @@
 let listeCategories = [];
 let listeArticles = [];
-
+let listeUser = [];
 $(() => {
+  getUsers()
   getCategory();
 })
 
@@ -45,6 +46,31 @@ $("#form-edit-article").submit(e => {
 
 })
 
+$('#form-edit-user').submit(e => {
+  e.preventDefault();
+
+  $.post('user/edit',$("#form-edit-user").serialize()).done(response => {
+    console.log(response);
+    $("#modalupdateUser").hide();
+    alert("Le compte utilisateur a bien été modifié");
+    getUsers();
+  }).fail(error => {
+    console.log(error);
+  })
+})
+
+$('#form-create-user').submit(e => {
+  e.preventDefault();
+  $.post("user/create",$("#form-create-user").serialize()).done(response => {
+    console.log(response);
+    alert("Le compte a été créé");
+    $("#modalAddUser").hide();
+    getUsers();
+  }).fail(error => {
+    console.log(error);
+  })
+});
+
 function getArticles(){
   $.getJSON('article/all').done((response) => {
     listeArticles = response;
@@ -82,11 +108,9 @@ function getArticles(){
 }
 function getCategory(){
   $.getJSON("category/all").done((response) => {
-    console.log(response)
-
 
     listeCategories = response;
-
+    $('#table-categories').empty();
     response.forEach(cat => {
       var tr = `  <tr>
       <td>${cat.id}</td>
@@ -102,9 +126,8 @@ function getCategory(){
       $('#edit-categories').append(option);
     })
     getArticles();
-  }).fail((error,t) => {
+  }).fail((error) => {
     console.log(error);
-    console.log(t);
   })
 }
 
@@ -146,4 +169,56 @@ function openTab(evt, tabName) {
   }
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.classList.add("w3-light-grey");
+}
+
+function getUsers(){
+  $.getJSON("user/all").done(response => {
+    console.log(response);
+    listeUser = response;
+    $("#list-users").empty();
+
+    response.forEach(user => {
+      var type ="Editeur";
+      if(user.userType ==1){
+        type = "Administrateur";
+      }
+      var tr =`  <tr>
+      <td>${user.id}</td>
+      <td>${user.login}</td>
+      <td>${user.pseudo}</td>
+      <td>${type}</td>
+      <td>${user.jetonAuthenticaton}</td>
+      <td>
+      <a href="#" class="w3-button w3-blue w3-round w3-tiny" >
+      <img src="view/assets/newsPhoto/refresh.png" style="width: 15px">
+      </a>
+
+      <a href="#" class="w3-button w3-green w3-round w3-tiny" onclick="editUser(${user.id})">
+      <img src="view/assets/newsPhoto/blogging.png" style="width: 15px">
+      </a>
+
+      <a href="#" class="w3-button w3-red w3-round w3-tiny">
+      <img src="view/assets/newsPhoto/delete.png" style="width: 15px">
+      </a>
+      </td>
+      </tr>`;
+
+      $("#list-users").append(tr);
+    })
+  }).fail(error => {
+    console.log(error)
+  })
+}
+
+function editUser(userId){
+  console.log(userId);
+
+  var user = listeUser.filter((user) => user.id == userId);
+  console.log(user);
+
+  $("input[name='user-id']").val(user[0].id);
+  $("input[name='edit-login']").val(user[0].login);
+  $("input[name='edit-pseudo']").val(user[0].pseudo);
+
+  $("#modalupdateUser").show();
 }

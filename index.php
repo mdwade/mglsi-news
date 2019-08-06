@@ -62,8 +62,8 @@ else
     $appController->createArticle($_POST);
     break;
     case '/article/edit':
-      $appController->editArticle($_POST);
-      break;
+    $appController->editArticle($_POST);
+    break;
     case '/category/all':
     echo json_encode(CategoryDAO::getCategorieList());
     break;
@@ -78,6 +78,15 @@ else
     break;
     case '/user/login':
     $appController->login($_POST);
+    break;
+    case '/user/all':
+    $appController->listUser();
+    break;
+    case '/user/edit':
+    $appController->editUser($_POST);
+    break;
+    case '/user/create':
+    $appController->createUser($_POST);
     break;
     break;
   }

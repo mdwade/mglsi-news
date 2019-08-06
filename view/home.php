@@ -46,7 +46,7 @@ $listAritcles = json_decode($listAritcle, true);
 
 foreach ($listAritcles as $article) {?>
             <div class="w3-col m3">
-                <img src="<?="view/assets/newsPhoto/" . $article['photo']?>"  style="width: 270px; height:390px;">
+                <img src="view/assets/newsPhoto/article.png"  style="width: 270px; height:390px;">
                 <h4><a href="<?='index.php?action=article&id=' . $article['id']?>"><?=substr($article['title'], 0, 50)?></a></h4>
                 <p><?=substr($article['content'], 0, 75) . '...'?></p>
             </div>
@@ -66,7 +66,5 @@ foreach ($listAritcles as $article) {?>
     <hr>
     <?php require_once 'view/assets/utils/footer.php'?>
 </div>
-<script type="text/javascript" src="public/assets/js/jquery.min.js"></script>
-<script src="public/js/articles.js" charset="utf-8"></script>
-</body>
+  <script src="public/js/jquery.min.js" charset="utf-8"></script>
 </html>

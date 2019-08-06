@@ -19,14 +19,9 @@ class User {
      * @param $_userType
      * @param $_jetonAuth
      */
-    public function __construct($id, $login, $password, $_pseudo, $_userType, $_jetonAuth)
+    public function __construct()
     {
-        $this->id = $id;
-        $this->login = $login;
-        $this->password = $password;
-        $this->_pseudo = $_pseudo;
-        $this->_userType = $_userType;
-        $this->_jetonAuth = $_jetonAuth;
+      
     }
 
     /**

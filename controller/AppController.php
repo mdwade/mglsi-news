@@ -41,7 +41,7 @@ class AppController {
 
 	/*Users*/
 	function createUser($request) {
-		//TODO
+		UserController::createUser($request);
 	}
 
 	function deleteUser($request) {
@@ -57,6 +57,13 @@ class AppController {
 		//TODO
 	}
 
+	function listUser(){
+		echo json_encode(UserController::getAll());
+	}
+
+	function editUser($request){
+		echo UserController::editUser($request);
+	}
 	function deleteComment($request) {
 		//TODO
 	}
