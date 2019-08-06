@@ -21,15 +21,8 @@ class Article {
      * @param $_pseudoAuthor
      * @param $_postedDate
      */
-    public function __construct($_id, $_title, $_content, $_idCategorie, $_photo, $_pseudoAuthor, $_postedDate)
+    public function __construct()
     {
-        $this->_id = $_id;
-        $this->_title = $_title;
-        $this->_content = $_content;
-        $this->_idCategorie = $_idCategorie;
-        $this->_photo = $_photo;
-        $this->_pseudoAuthor = $_pseudoAuthor;
-        $this->_postedDate = $_postedDate;
     }
 
     /**

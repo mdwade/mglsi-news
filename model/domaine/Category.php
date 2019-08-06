@@ -10,10 +10,8 @@ class Category {
      * @param $_id
      * @param $_libelle
      */
-    public function __construct($_id, $_libelle)
+    public function __construct()
     {
-        $this->_id = $_id;
-        $this->_libelle = $_libelle;
     }
 
     /**

@@ -10,7 +10,7 @@ class CategoryDAO
         $msg = false;
 
         $query = DB::getDB()->prepare('INSERT INTO categories(libelle) VALUES (:libelle)');
-        $query->bindParam(':libelle', $categorie->getLibelle());
+        $query->bindValue(':libelle', $categorie->getLibelle());
 
         if($query->execute()){
             $msg = true;
@@ -21,8 +21,8 @@ class CategoryDAO
 
     //get List categorie
     static function getCategorieList(){
-        $query = DB::getDB()->query('SELECT * FROM categories ORDER BY length(libelle)');
+        $query = DB::getDB()->query('SELECT * FROM categories ORDER BY id');
 
-        return $query;
+        return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
 }

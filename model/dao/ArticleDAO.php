@@ -5,65 +5,66 @@ require_once (ROOT.'model/domaine/Article.php');
 
 class ArticleDAO
 {
-    //create an article
-    static function createArticle(Article $a){
-        $msg = false;
-        $query = DB::getDB()->prepare('INSERT INTO articles (title, content, idCategorie, photo, pseudoAuthor, postedDate) 
-                                                VALUES (:title, :content, :idCategorie, :photo, :pseudoAuthor, :postedDate)');
+  //create an article
+  static function createArticle(Article $a){
+    $msg = false;
+    $query = DB::getDB()->prepare('INSERT INTO articles (title, content, idCategorie, photo, pseudoAuthor)
+    VALUES (:title, :content, :idCategorie, :photo, :pseudoAuthor)');
 
-        $query->bindParam(':title', $a->getTitle());
-        $query->bindParam(':content', $a->getContent());
-        $query->bindParam(':idCategorie', $a->getIdCategorie());
-        $query->bindParam(':photo', $a->getPhoto());
-        $query->bindParam('pseudoAuthor', $a->getPseudoAuthor());
-        $query->bindParam(':postedDate', $a->getPostedDate());
+    $query->bindValue(':title', $a->getTitle());
+    $query->bindValue(':content', $a->getContent());
+    $query->bindValue(':idCategorie', $a->getIdCategorie());
+    $query->bindValue(':photo', $a->getPhoto());
+    $query->bindValue(':pseudoAuthor', 'djadja');
 
-
-        if($query->execute()){
-            $msg = true;
-        }
-
-        return $msg;
+    if($query->execute()){
+      $msg = true;
     }
 
-    //get all articles
-    static function readArticles(){
-        $articles = array();
-        $query = DB::getDB()->query('SELECT * FROM articles');
+    return $msg;
+  }
 
-        while ($data = $query->fetch(PDO::FETCH_ASSOC)){
-            $articles[] = $data;
-        }
-        return $articles;
+  //get all articles
+  public static function readArticles(){
+    $articles = array();
+
+    $query = DB::getDB()->query('SELECT * FROM articles');
+
+    $articles = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    return json_encode($articles);
+  }
+  
+  static function readArticleById($id){
+    $article = DB::getDB()->query('SELECT * FROM articles where id ='.$id);
+
+    $item = $article->fetch(PDO::FETCH_ASSOC);
+
+    $article->closeCursor();
+
+    return json_encode($item);
+  }
+
+  //get article by categorie
+  static function readArticlesByCategorie($idCategory){
+    $items = array();
+
+    $query = DB::getDB()->query('SELECT * FROM articles where idCategorie ='.$idCategory);
+
+    $items[] = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    return $items;
+  }
+
+  //delete an article
+  static function deleteArticle($id){
+    $msg = false;
+    $query = 'DELETE FROM article where $id ='.$id;
+
+    if(DB::getDB()->query($query)){
+      $msg = true;
     }
 
-    //get article by id
-     static function readArticleById($id){
-        $article = DB::getDB()->query('SELECT * FROM articles where id ='.$id);
-        $item = $article->fetch();
-        $article->closeCursor();
-        return $item;
-    }
-
-    //get article by categorie
-    static function readArticlesByCategorie($idCategory){
-        $items = array();
-        $query = DB::getDB()->query('SELECT * FROM articles where idCategorie ='.$idCategory);
-        while ($data = $query->fetch(PDO::FETCH_ASSOC)){
-            $items[] = $data;
-        }
-        return $items;
-    }
-
-    //delete an article
-    static function deleteArticle($id){
-        $msg = false;
-        $query = 'DELETE FROM article where $id ='.$id;
-
-        if(DB::getDB()->query($query)){
-            $msg = true;
-        }
-
-        return $msg;
-    }
+    return $msg;
+  }
 }

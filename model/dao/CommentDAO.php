@@ -27,12 +27,11 @@ class CommentDAO
     //get list by article id
     static function getListCommentByArticle($idArticle){
         $comments = array();
-        $query = DB::getDB()->query('SELECT * FROM comments where idArticle = '.$idArticle);
-
+        $query = DB::getDB()->query('SELECT * FROM `comments` WHERE idArticle='.$idArticle.' ORDER BY YEAR(postedDate), MONTH(postedDate), DAY(postedDate) asc ');
         while ($data = $query->fetch(PDO::FETCH_ASSOC)){
             $comments[] = $data;
         }
-        return $comments;
+        return json_encode($comments);
     }
 
     //delete a comment
