@@ -3,37 +3,47 @@
 define('WEBROOT',str_replace('index.php','',$_SERVER['SCRIPT_NAME']));
 define('ROOT',str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']));
 
+$url = explode('/', $_SERVER['REQUEST_URI']);
+
 include_once (ROOT.'controller/AppController.php');
 session_start();
 $appController = new AppController();
 
 if(isset($_GET['action']))
 {
+
   switch ($_GET['action'])
   {
     case 'listArticles':
+    $appController = new AppController();
     $appController->getlistArticle();
     break;
+
     case 'article':
+    $appController = new AppController();
     $appController->getArticleItem();
     break;
-    case 'article/create':
-    $appController->createArticle();
-    break;
+
     case 'category':
+    $appController = new AppController();
     $appController->getlistArticleByCategorie();
+    break;
+
     case 'login':
+    $appController = new AppController();
+    $appController->login($_POST);
     break;
-    case 'edit':
-    echo ArticleDAO::readArticleById($_GET['id']);
-    break;
-    case'admin':
-    break;
+
     default:
+    $appController = new AppController();
     $appController->getlistArticle();
     break;
   }
 }
+// elseif ($url[2] == 'login'){
+//   $appController = new AppController();
+//   $appController->login();
+// }
 else
 {
   $uri = explode('mglsi-news',$_SERVER['REQUEST_URI'],2);
@@ -51,6 +61,9 @@ else
     case '/article/create':
     $appController->createArticle($_POST);
     break;
+    case '/article/edit':
+      $appController->editArticle($_POST);
+      break;
     case '/category/all':
     echo json_encode(CategoryDAO::getCategorieList());
     break;

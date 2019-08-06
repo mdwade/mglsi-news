@@ -11,7 +11,7 @@ class UserController {
 
     if($res['password'] == sha1($password)){
       session_start();
-      
+
       $_SESSION['id'] = $res['id'];
 
       echo "true";

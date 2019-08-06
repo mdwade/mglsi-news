@@ -24,6 +24,15 @@ class ArticleDAO
     return $msg;
   }
 
+  public static function edit(Article $article){
+    $query = DB::getDB()->prepare('UPDATE articles SET title=:title, content =:content  WHERE articles.id = :id');
+
+    $query->bindValue(':title', $article->getTitle());
+    $query->bindValue(':content', $article->getContent());
+    $query->bindValue(':id', $article->getId());
+
+    return $query->execute();
+  }
   //get all articles
   public static function readArticles(){
     $articles = array();
@@ -34,7 +43,7 @@ class ArticleDAO
 
     return json_encode($articles);
   }
-  
+
   static function readArticleById($id){
     $article = DB::getDB()->query('SELECT * FROM articles where id ='.$id);
 

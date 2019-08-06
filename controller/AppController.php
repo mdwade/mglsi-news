@@ -11,6 +11,9 @@ class AppController {
 		ArticleController::createArticle($request);
 	}
 
+	function editArticle($request){
+		ArticleController::editArticle($request);
+	}
 	function detailArticle($request){
 		ArticleController::getArticle($request);
 	}
@@ -62,7 +65,7 @@ class AppController {
 		if(!isset($_SESSION['id'])){
 			 header('Location:http://localhost/mglsi-news/login');
 		}else{
-			require 'view/admin.php';
+			require 'view/adminHome.php';
 		}
 	}
 

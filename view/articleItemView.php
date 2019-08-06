@@ -84,35 +84,53 @@ if ($_GET['action'] == 'article') {
                             </div>
                         </div>
                     </div>';
-	}?>
-
+                }?>
                 </div><?php
 
-} elseif ($_GET['action'] == 'categorie') {
-	if (!empty($article)) {
-		foreach ($article as $article) {?>
-                        <div class="article">
-                        <h1><a href="index.php?action=post&id=<?=$article['id']?>"><?=$article['titre']?></a></h1>
-                        <p><?=substr($article['contenu'], 0, 300) . '...'?></p>
-                        </div><?php
-}
-	} else {?>
-                    <h3>Aucun article dans cette catégorie !</h3>
-                    <meta http-equiv="refresh" content="3; url=index.php"><?php
-}
-}
-?>
+            }
+
+            elseif ($_GET['action'] == 'category')
+            {
+                $article = json_decode($article, true);
+
+                if(!empty($article)){
+                    foreach ($article as $article){?>
+                        <div class="w3-row">
+                            <div class="w3-col m2">
+                                <img src="<?= "view/assets/newsPhoto/".$article['photo'] ?>" style="width:100px" class="w3-circle">
+                            </div>
+                            <div class="w3-col m10">
+                                <h3><a href="index.php?action=article&id=<?= $article['id'] ?>"><?= $article['title'] ?></a></h3>
+                                <div class="w3-row">
+                                    <div class="w3-col m8" style="opacity: 0.7">
+                                        <p><?= substr($article['content'], 0, 100) . '...' ?></p>
+                                    </div>
+                                    <div class="w3-col m4">
+                                        <p class="fa fa-clock-o"> <?= $article['postedDate'] ?></p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><hr>
+                        <?php
+                    }
+                }
+                else{?>
+                    <h3 style="margin-bottom: 150px; opacity: 0.5">Aucun article dans cette catégorie !</h3>
+                    <?php
+                }
+            }
+            ?>
             <div>
                 <h1> </h1>
             </div>
         </div>
     </div>
 
-    <hr>
-
-    <?php require_once 'view/assets/utils/footer.php'?>
     <!-- End page content -->
 
 </div>
+<?php require_once 'view/assets/utils/footer.php'?>
+
 </body>
 </html>

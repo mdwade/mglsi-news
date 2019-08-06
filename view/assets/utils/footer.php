@@ -1,15 +1,15 @@
 <!-- Footer -->
-<footer class="w3-row-padding w3-padding-32">
+<footer class="w3-row-padding w3-padding-32" style="color:white; background-image: url('view/assets/newsPhoto/bg.png');background-size: cover">
     <div class="w3-third">
-        <h3>FOOTER</h3>
+        <h3>A PROPOS</h3>
         <p>Ce site a été développeé pour partager des informations qui concernent l'école, les études etc.</p>
     </div>
 
     <div class="w3-third">
-        <h3>BLOG POSTS</h3>
+        <h3>MGLSI News</h3>
         <ul class="w3-ul w3-hoverable">
             <li class="w3-padding-16">
-                <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
+                <img src="../newsPhoto/user.png" class="w3-left w3-margin-right" style="width:50px">
                 <span class="w3-large">Lorem</span><br>
                 <span>Sed mattis nunc</span>
             </li>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="w3-third w3-serif">
-        <h3>POPULAR TAGS</h3>
+        <h3>CATEGORIES</h3>
         <p>
             <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
             <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Salmon</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">France</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>

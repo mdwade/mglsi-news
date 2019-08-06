@@ -42,18 +42,30 @@ class ArticleController {
                   </br>
                   <meta http-equiv="refresh" content="3; url=index.php">
                   ';
-		}
-	}
+        }
+    }
 
-	static function getlistArticleByCategorie() {
-		if (isset($_GET['id']) && $_GET['id'] > 0) {
-			$article = ArticleDAO::readArticlesByCategorie($_GET['id']);
-			$comments = CommentDAO::getListCommentByArticle($_GET['id']);
-			$categorieList = CategoryDAO::getCategorieList();
-			var_dump($comments);
-			require 'view/articleItemView.php';
-		} else {
-			echo '<h3>Erreur : cette catégorie n\'existe pas</h3>
+		static function editArticle($request){
+			$article = new Article();
+
+			$article->setTitle($request['edit-title']);
+			$article->setIdCategorie($request['edit-category']);
+			$article->setContent($request['edit-content']);
+			$article->setId($request['id-article']);
+			
+		echo 	ArticleDAO::edit($article);
+		}
+
+    static function getlistArticleByCategorie(){
+        if (isset($_GET['id']) && $_GET['id'] > 0) {
+            $article = ArticleDAO::readArticlesByCategorie($_GET['id']);
+            $comments = CommentDAO::getListCommentByArticle($_GET['id']);
+            $categorieList = CategoryDAO::getCategorieList();
+
+            require 'view/articleItemView.php';
+        }
+        else {
+            echo '<h3>Erreur : cette catégorie n\'existe pas</h3>
                   </br>
                   <meta http-equiv="refresh" content="3; url=index.php">
                 ';
